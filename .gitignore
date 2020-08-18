@@ -1,0 +1,7 @@
+# specific ignore for dev
+
+# history files
+.Rhistory
+
+# C extensions
+*.so
