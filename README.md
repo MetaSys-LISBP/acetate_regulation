@@ -1,8 +1,8 @@
-# Kinetic modeling of glucose and acetate metabolisms in *E. coli* - Millard et al., 2020.
+# Kinetic modeling of glucose and acetate metabolisms in *E. coli* - Millard et al., 2021.
 
 ## Overview
 
-This R script performs all analyses detailed in the following publication:
+These R scripts perform all analyses detailed in the following publication:
 
 > Control and regulation of acetate overflow in *Escherichia coli*
 > 
@@ -11,17 +11,17 @@ This R script performs all analyses detailed in the following publication:
 All models are available in COPASI format in the directory `/model/cps/`, with the experimental data used for model calibration. The final kinetic model is also available in SBML format in the 
 directory `/model/sbml/` and from the Biomodels database (http://www.ebi.ac.uk/biomodels/) under identifier MODEL2005050001.
 
-Details on the calculations can be found in the [publication](https://doi.org/10.1101/2020.08.18.255356) and in the script `run_analysis.R`.
+Details on the calculations can be found in the [original publication](https://doi.org/10.1101/2020.08.18.255356) and in the R scripts.
 
 ## Dependencies
 
 Some R packages are required.
 
-`RColorBrewer` and `gplots` can be installed
+`RColorBrewer`, `stringr` and `gplots` can be installed
 by running the following command in an R console:
 
 ```bash
-install.packages(c("RColorBrewer", "gplots"))
+install.packages(c("RColorBrewer", "gplots", "stringr"))
 ```
 
 `CoRC` can be installed
@@ -53,10 +53,22 @@ cd /home/usr/data/acetate_regulation/
 R
 ```
 
-- run calculations:
+- run calculations, starting from model construction to regulation analyses:
 
 ```bash
-source("run_analysis.R")
+source("1-Model_construction.R")
+```
+
+```bash
+source("2-Model_validation.R")
+```
+
+```bash
+source("3-Metabolic_control_analyses.R")
+```
+
+```bash
+source("4-Regulation_analyses.R")
 ```
 
 The code is open-source and available under GPLv3 license.
